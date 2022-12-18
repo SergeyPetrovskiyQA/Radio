@@ -5,8 +5,8 @@ public class Radio {
     private int minStation = 0;
     private int maxVolume = 10;
     private int minVolume = 0;
-    public int currentStation;
-    public int currentVolume;
+    private int currentStation;
+    private int currentVolume;
 
     public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation > maxStation) {
