@@ -121,7 +121,7 @@ public class RadioTest {
     public void shouldNotSetCurrentStaIfMoreMax() {
         Radio radio = new Radio();
 
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
         int expected = 0;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
@@ -153,11 +153,11 @@ public class RadioTest {
     public void increaseDoesNothing() {
         Radio radio = new Radio();
 
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
 
         radio.increaseVolume();
 
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
@@ -213,5 +213,24 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-}
+    @Test
+    public void stationCount() {
+        Radio radio = new Radio();
 
+        int expected = 9;
+        int actual = radio.getMaxStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCount1() {
+        Radio radio = new Radio(10);
+        radio.setCurrentStation(9);
+
+        int expected = 9;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+
+}
